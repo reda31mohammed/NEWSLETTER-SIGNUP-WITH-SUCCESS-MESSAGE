@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+// variables
+$Primary: hsl(4, 100%, 67%);
+$blue-700: hsl(235, 18%, 26%);
+$blue-800: hsl(234, 29%, 20%);
+$grey: hsl(0, 0%, 58%);
+$white: hsl(0, 0%, 100%);
+
+// rules
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+img {
+  max-inline-size: 100%;
+}
+h1,
+h2,
+h3 {
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+ul {
+  list-style-type: none;
+  list-style-position: outside;
+}
+// media query
+@mixin tablet() {
+  @media (min-width: 40rem) {
+    @content;
+  }
+}
+@mixin desktop() {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}

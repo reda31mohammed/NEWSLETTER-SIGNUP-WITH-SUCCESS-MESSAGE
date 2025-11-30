@@ -1,0 +1,208 @@
+@import "config.scss";
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: $blue-800;
+  height: 100vh;
+  position: relative;
+  .signup-page {
+    // opacity: 0;
+    position: relative;
+    overflow: hidden;
+    figure {
+      width: 100%;
+      margin-bottom: 2.5em;
+      #mobile {
+        width: 100%;
+      }
+      #tablet,
+      #desktop {
+        display: none;
+      }
+    }
+    .text-zone {
+      margin: 0 1.5em 2.5em;
+      h1 {
+        font-size: 2.5rem;
+        line-height: 100%;
+        font-weight: 700;
+      }
+      p {
+        margin: 1.5em 0;
+        line-height: 150%;
+      }
+      ul {
+        img {
+          margin-right: 1em;
+          display: inline;
+        }
+        li {
+          display: flex;
+          margin-bottom: 0.5em;
+        }
+      }
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      // margin: 0 1.5em;
+      .form-zone {
+        margin: 0 0 0.5em;
+        display: flex;
+        justify-content: space-between;
+        label {
+          font-weight: 700;
+          font-size: 0.75rem;
+          line-height: 150%;
+        }
+        .error-text {
+          font-weight: 700;
+          font-size: 0.75rem;
+          line-height: 150%;
+          color: $Primary;
+        }
+      }
+      input {
+        padding: 1em 1.5em;
+        outline: none;
+        text-align: left;
+        border-radius: 0.5em;
+        margin-bottom: 1.5em;
+      }
+      .error-style {
+        color: $Primary;
+        background-color: rgba(255, 98, 87, 0.13);
+        border-color: $Primary;
+      }
+      button {
+        width: 100%;
+        font-size: clamp(0.5rem, 4vw, 1rem);
+        font-weight: 700;
+        padding: 1em 2.5em;
+        background: $blue-800;
+        line-height: 150%;
+        color: $white;
+        border-radius: 0.5em;
+        cursor: pointer;
+        border: none;
+      }
+      .active-btn {
+        background: linear-gradient(to right, #ff6a3a, #ff527b);
+      }
+    }
+  }
+}
+#success-window {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0 2.5em;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  .success-message {
+    color: $blue-800;
+    h1 {
+      font-size: 2.5rem;
+      padding: 2rem 0;
+    }
+    p {
+      font-size: 1.2rem;
+      line-height: 150%;
+      a {
+        color: $blue-800;
+        font-weight: 700;
+      }
+    }
+  }
+  button {
+    padding: 1em 6.5em;
+    border: none;
+    color: $white;
+    background: $blue-800;
+    font-weight: 700;
+    line-height: 150%;
+    border-radius: 0.5em;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+  }
+  button:hover {
+    background: linear-gradient(to right, #ff6a3a, #ff527b);
+  }
+}
+// tablet design
+@include tablet {
+  body {
+    display: grid;
+    place-items: center;
+    background: $blue-700;
+    .signup-page {
+      margin: 50px auto;
+      max-width: 38rem;
+      background: $white;
+      border-radius: 2.25em;
+      padding: 2.5em;
+      figure {
+        #mobile {
+          display: none;
+        }
+        #tablet {
+          display: block;
+          border: none;
+        }
+      }
+      .text-zone {
+        h1 {
+          font-size: 3.5rem;
+        }
+      }
+    }
+    #success-window {
+      width: 504px;
+      height: 520px;
+      background: $white;
+      border-radius: 2.25em;
+      top: 25%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+// desktop design
+@include desktop {
+  body {
+    .signup-page {
+      display: flex;
+      padding: 2em;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      max-width: 55rem;
+      figure {
+        flex-shrink: 2;
+        display: flex;
+        justify-content: end;
+        #tablet {
+          display: none;
+        }
+        #desktop {
+          display: block;
+        }
+      }
+      .text-zone {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        width: 58%;
+        margin: 0 2.5em 0 0;
+        form {
+          width: 100%;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
