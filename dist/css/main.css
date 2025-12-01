@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+img {
+  max-inline-size: 100%;
+}
+
+h1,
+h2,
+h3 {
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  list-style-position: outside;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: hsl(234, 29%, 20%);
+  height: 100vh;
+  position: relative;
+}
+body .signup-page {
+  position: relative;
+  overflow: hidden;
+}
+body .signup-page figure {
+  width: 100%;
+  margin-bottom: 2.5em;
+}
+body .signup-page figure #mobile {
+  width: 100%;
+}
+body .signup-page figure #tablet,
+body .signup-page figure #desktop {
+  display: none;
+}
+body .signup-page .text-zone {
+  margin: 0 1.5em 2.5em;
+}
+body .signup-page .text-zone h1 {
+  font-size: 2.5rem;
+  line-height: 100%;
+  font-weight: 700;
+}
+body .signup-page .text-zone p {
+  margin: 1.5em 0;
+  line-height: 150%;
+}
+body .signup-page .text-zone ul img {
+  margin-right: 1em;
+  display: inline;
+}
+body .signup-page .text-zone ul li {
+  display: flex;
+  margin-bottom: 0.5em;
+}
+body .signup-page form {
+  display: flex;
+  flex-direction: column;
+}
+body .signup-page form .form-zone {
+  margin: 0 0 0.5em;
+  display: flex;
+  justify-content: space-between;
+}
+body .signup-page form .form-zone label {
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 150%;
+}
+body .signup-page form .form-zone .error-text {
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 150%;
+  color: hsl(4, 100%, 67%);
+}
+body .signup-page form input {
+  padding: 1em 1.5em;
+  outline: none;
+  text-align: left;
+  border-radius: 0.5em;
+  margin-bottom: 1.5em;
+}
+body .signup-page form .error-style {
+  color: hsl(4, 100%, 67%);
+  background-color: rgba(255, 98, 87, 0.13);
+  border-color: hsl(4, 100%, 67%);
+}
+body .signup-page form button {
+  width: 100%;
+  font-size: clamp(0.5rem, 4vw, 1rem);
+  font-weight: 700;
+  padding: 1em 2.5em;
+  background: hsl(234, 29%, 20%);
+  line-height: 150%;
+  color: hsl(0, 0%, 100%);
+  border-radius: 0.5em;
+  cursor: pointer;
+  border: none;
+}
+body .signup-page form .active-btn {
+  background: linear-gradient(to right, #ff6a3a, #ff527b);
+}
+
+#success-window {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0 2.5em;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+}
+#success-window .success-message {
+  color: hsl(234, 29%, 20%);
+}
+#success-window .success-message h1 {
+  font-size: 2.5rem;
+  padding: 2rem 0;
+}
+#success-window .success-message p {
+  font-size: 1.2rem;
+  line-height: 150%;
+}
+#success-window .success-message p a {
+  color: hsl(234, 29%, 20%);
+  font-weight: 700;
+}
+#success-window button {
+  padding: 1em 6.5em;
+  border: none;
+  color: hsl(0, 0%, 100%);
+  background: hsl(234, 29%, 20%);
+  font-weight: 700;
+  line-height: 150%;
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+#success-window button:hover {
+  background: linear-gradient(to right, #ff6a3a, #ff527b);
+}
+
+@media (min-width: 40rem) {
+  body {
+    display: grid;
+    place-items: center;
+    background: hsl(235, 18%, 26%);
+  }
+  body .signup-page {
+    margin: 50px auto;
+    max-width: 38rem;
+    background: hsl(0, 0%, 100%);
+    border-radius: 2.25em;
+    padding: 2.5em;
+  }
+  body .signup-page figure #mobile {
+    display: none;
+  }
+  body .signup-page figure #tablet {
+    display: block;
+    border: none;
+  }
+  body .signup-page .text-zone h1 {
+    font-size: 3.5rem;
+  }
+  body #success-window {
+    width: 504px;
+    height: 520px;
+    background: hsl(0, 0%, 100%);
+    border-radius: 2.25em;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+@media (min-width: 1024px) {
+  body .signup-page {
+    display: flex;
+    padding: 2em;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    max-width: 55rem;
+  }
+  body .signup-page figure {
+    flex-shrink: 2;
+    display: flex;
+    justify-content: end;
+  }
+  body .signup-page figure #tablet {
+    display: none;
+  }
+  body .signup-page figure #desktop {
+    display: block;
+  }
+  body .signup-page .text-zone {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 58%;
+    margin: 0 2.5em 0 0;
+  }
+  body .signup-page .text-zone form {
+    width: 100%;
+    margin: 0;
+  }
+}/*# sourceMappingURL=main.css.map */
